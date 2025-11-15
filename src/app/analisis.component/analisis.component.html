@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análisis Numérico: Método de Bisección</title>
+
+</head>
+<body>
+
+<div class="main-layout">
+
+  <aside class="sidebar">
+    <div class="logo-area">
+      <img src="assets/imagenes/ojo.jpg" alt="Logo OVA" class="logo-icon">
+    </div>
+    <div class="sidebar-content">
+    </div>
+    <button routerLink="/curso" class="btn-volver btn-magenta-sidebar">VOLVER</button>
+  </aside>
+
+  <div class="content-panel">
+
+    <header class="top-header-bar">
+      <h1 class="module-title-header">Método de Bisección</h1>
+    </header>
+
+    <div class="module-simulation-area single-column">
+
+      <div class="biseccion-card-container">
+
+        <div class="description-box">
+          <h2>Localización de Raíces</h2>
+          <p>El Método de Bisección localiza la raíz de una función f(x) dentro de un intervalo [a, b], garantizando la convergencia si f(a) y f(b) tienen signos opuestos. Ingresa los parámetros y la función matemática  para comenzar la simulación.</p>
+        </div>
+
+        <div class="interaction-container">
+
+          <div class="controls-area split-input">
+
+            <div class="input-group">
+              <label for="funcion-fx">Función f(x) = </label>
+              <input type="text" id="funcion-fx" value="Math.pow(x, 3) - x - 1" placeholder="Ej: Math.cos(x) - x" title="Usa notación JavaScript (Ej: Math.pow(x, 2) - 4)">
+            </div>
+
+            <div class="input-group">
+              <label for="valor-a">Valor de a:</label>
+              <input type="number" id="valor-a" value="1" step="any">
+            </div>
+
+            <div class="input-group">
+              <label for="valor-b">Valor de b:</label>
+              <input type="number" id="valor-b" value="2" step="any">
+            </div>
+
+            <div class="input-group">
+              <label for="tolerancia">Tolerancia:</label>
+              <input type="number" id="tolerancia" value="0.0001" min="0.000000001" step="any">
+            </div>
+
+            <div class="input-group">
+              <label for="max-iteraciones">Máx. Iteraciones:</label>
+              <input type="number" id="max-iteraciones" value="20" min="1" step="1">
+            </div>
+          </div>
+
+          <div class="action-results-box">
+            <button class="btn-magenta" id="btn-iniciar-biseccion">INICIAR CÁLCULO</button>
+
+            <div class="result-summary">
+              <h3>Resultado Final</h3>
+              <p class="resultado-raiz">Raíz Aproximada: [Esperando cálculo...]</p>
+              <p class="resultado-iteraciones">Iteraciones Usadas: 0</p>
+            </div>
+          </div>
+
+          <div class="table-visualization">
+            <h3>Tabla de Iteraciones</h3>
+            <div class="table-scroll-container">
+              <table id="tabla-biseccion">
+                <thead>
+                <tr>
+                  <th>n</th>
+                  <th>a_n</th>
+                  <th>b_n</th>
+                  <th>c_n</th>
+                  <th>f(a_n)</th>
+                  <th>f(c_n)</th>
+                  <th>Error Absoluto</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

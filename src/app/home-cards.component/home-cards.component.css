@@ -1,0 +1,63 @@
+/* --- DEFINICIÓN DE COLORES --- */
+:root {
+  --color-verde-lima: #59fa34; /* Fondo Principal y Borde de Iconos */
+  --color-magenta: #a020f0;  /* Botones de Tarjetas */
+  --color-blanco: #ffffff; /* Fondo de Tarjetas */
+}
+
+/* Fondo Verde Lima para el body */
+.bg-lima {
+  background-color: #59fa34;
+  min-height: 100vh; /* 👈 OCUPA 100% DE LA ALTURA DE LA PANTALLA */
+  width: 100%;
+}
+
+
+/* Estilo de la Tarjeta */
+.card-custom {
+  border: none;
+  border-radius: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Altura mínima para una apariencia uniforme */
+  min-height: 200px;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Estilo del Círculo de Icono */
+.icon-circle {
+  width: 120px;
+  height: 120px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Borde Verde Lima para los Iconos */
+.icon-lima-border {
+  border: 8px solid  #59fa34;
+}
+
+/* Estilo del Botón Magenta */
+.btn-magenta {
+  background-color:#a020f0 ;
+  border-color: #a020f0;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+.btn-magenta:hover {
+  background-color: #c95ed2; /* Tono más oscuro al pasar el mouse */
+  border-color: #c95ed2;
+  color: #ffffff;
+}
+
+

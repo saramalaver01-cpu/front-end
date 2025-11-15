@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Código César</title>
+</head>
+<body>
+
+<div class="main-layout">
+
+  <aside class="sidebar">
+
+    <div class="logo-area">
+      <img src="assets/imagenes/ojo.jpg" alt="Logo OVA" class="logo-icon">
+    </div>
+
+    <div class="sidebar-content">
+    </div>
+
+    <button routerLink='/mate' class="btn-volver btn-magenta-sidebar">VOLVER</button>
+  </aside>
+
+  <div class="content-panel">
+
+    <header class="top-header-bar">
+      <h1 class="module-title-header">Código César</h1>
+    </header>
+
+    <div class="module-simulation-area split-area">
+
+      <div class="split-column">
+        <h2>Cifrar Mensaje </h2>
+        <p>Usa esta sección para convertir un mensaje legible en código secreto.</p>
+
+        <div class="interaction-box">
+          <label for="mensaje-original">Mensaje Original:</label>
+          <textarea id="mensaje-original" rows="3" placeholder="Ingresa el texto a cifrar (solo letras A-Z)"></textarea>
+
+          <label for="clave-cifrado">Clave :</label>
+          <input type="number" id="clave-cifrado" min="1" max="25" value="3">
+
+          <button class="btn-magenta">CIFRAR</button>
+
+          <div class="result-area">
+            <label>Mensaje Cifrado:</label>
+            <p class="resultado-cifrado">[Resultado del cifrado]</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="split-column">
+        <h2>Descifrar Mensaje </h2>
+        <p>Usa esta sección para revelar el mensaje secreto usando la clave.</p>
+
+        <div class="interaction-box">
+          <label for="mensaje-cifrado">Mensaje Cifrado:</label>
+          <textarea id="mensaje-cifrado" rows="3" placeholder="Ingresa el código secreto"></textarea>
+
+          <label for="clave-descifrado">Clave :</label>
+          <input type="number" id="clave-descifrado" min="1" max="25" value="3">
+
+          <button class="btn-magenta">DESCIFRAR</button>
+
+          <div class="result-area">
+            <label>Mensaje Descifrado:</label>
+            <p class="resultado-descifrado">[Resultado del descifrado]</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

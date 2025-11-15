@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escítala Espartana</title>
+
+</head>
+<body>
+
+<div class="main-layout">
+
+  <aside class="sidebar">
+
+    <div class="logo-area">
+      <img src="assets/imagenes/ojo.jpg" alt="Logo OVA" class="logo-icon">
+    </div>
+
+    <div class="sidebar-content">
+    </div>
+
+    <button routerLink="/mate" class="btn-volver btn-magenta-sidebar">VOLVER</button>
+  </aside>
+
+  <div class="content-panel">
+
+    <header class="top-header-bar">
+      <h1 class="module-title-header">Escítala Espartana</h1>
+    </header>
+
+    <div class="module-simulation-area single-column">
+
+      <div class="description-box">
+        <h2>Cifrado por Transposición</h2>
+        <p>La Escítala es un método militar que utiliza un cilindro (o clave) para reordenar las letras de un mensaje. Usa el campo de abajo y la clave para cifrar o descifrar tu texto. La clave representa el número de columnas.</p>
+      </div>
+
+      <div class="interaction-container">
+
+        <div class="controls-area">
+          <label for="clave-escitala">Clave (Columnas/Diámetro):</label>
+          <input type="number" id="clave-escitala" min="2" value="4">
+        </div>
+
+        <div class="interaction-box">
+          <h3>Mensaje Original / Cifrado</h3>
+          <textarea id="texto-entrada" rows="5" placeholder="Ingresa el mensaje a cifrar o el código a descifrar (solo letras)"></textarea>
+
+          <div class="action-buttons">
+            <button class="btn-magenta" id="btn-cifrar-escitala">CIFRAR</button>
+            <button class="btn-magenta" id="btn-descifrar-escitala">DESCIFRAR</button>
+          </div>
+        </div>
+
+        <div class="result-box">
+          <h3>Resultado</h3>
+          <p class="resultado-escitala">[El mensaje cifrado o descifrado aparecerá aquí]</p>
+        </div>
+
+        <div class="matrix-visualization">
+          <h3>Visualización de la Matriz (Opcional)</h3>
+          <div id="matriz-output" class="matrix-grid">
+            <p>La transposición se realiza llenando una matriz por filas y leyendo el resultado por columnas.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

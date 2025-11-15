@@ -1,0 +1,208 @@
+/* --- DEFINICIÓN DE COLORES --- */
+:root {
+  --color-verde-lima: #59fa34; /* Fondo Sidebar y Botón VOLVER */
+  --color-magenta: #a020f0;  /* Fondo Barra Superior y Botones */
+  --color-blanco: #ffffff;
+  --color-texto-oscuro: #333333;
+  --color-texto-claro: #666666;
+  --color-sombra: rgba(0, 0, 0, 0.15);
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.main-layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* --- 1. ASIDE (Barra Lateral Izquierda - VERDE LIMA) --- */
+.sidebar {
+  width: 150px;
+  min-width: 150px;
+  background-color: #a020f0; /* Fondo Verde Lima */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+  border-radius: 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-area {
+  margin-bottom: 50px;
+  padding-top: 20px;
+}
+
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-content {
+  flex-grow: 1;
+}
+
+/* Botón VOLVER (MAGENTA sobre fondo VERDE) */
+.btn-volver {
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-magenta-sidebar {
+  background-color: #59fa34;
+  color: #ffffff;
+}
+
+.btn-magenta-sidebar:hover {
+  background-color: #a020f0;
+}
+
+/* --- 2. PANEL DE CONTENIDO DERECHO --- */
+.content-panel {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* HEADER (Barra Superior - MAGENTA) */
+.top-header-bar {
+  width: 100%;
+  height: 80px;
+  background-color: #a020f0; /* Fondo Morado */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.module-title-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Área de Simulación (El espacio blanco principal) */
+.module-simulation-area {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+
+/* --- ESTILOS PARA LA DIVISIÓN EN DOS COLUMNAS (CIFRADO/DESCIFRADO) --- */
+
+.split-area {
+  display: grid;
+  /* Divide el área en dos columnas iguales */
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+.split-column {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f7f7f7; /* Fondo ligeramente gris para separar visualmente */
+}
+
+.split-column h2 {
+  color: #a020f0;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.interaction-box {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.interaction-box label {
+  display: block;
+  margin-top: 10px;
+  color: var(--color-texto-oscuro);
+  font-weight: bold;
+}
+
+.interaction-box textarea, .interaction-box input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.btn-magenta {
+  background-color: #a020f0;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-magenta:hover {
+  background-color: #a020f0;
+}
+
+/* Responsive: Se apila en pantallas pequeñas */
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0;
+    padding: 10px 20px;
+  }
+  .logo-area {
+    margin: 0;
+    padding: 0;
+  }
+  .sidebar-content {
+    display: none;
+  }
+  .btn-volver {
+    margin: 0;
+  }
+  .split-area {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+}

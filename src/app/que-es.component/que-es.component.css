@@ -1,0 +1,146 @@
+/* --- DEFINICIÓN DE COLORES --- */
+:root {
+  --color-verde-lima: #59fa34; /* Fondo Principal */
+  --color-magenta: #a020f0;  /* Botones y Borde de Iconos */
+  --color-blanco: #ffffff; /* Fondo de Tarjeta */
+  --color-texto-oscuro: #000000;
+  --color-texto-claro: #000000;
+  --color-sombra: rgb(0, 0, 0);
+}
+
+body {
+  background-color: #59fa34; /* Fondo verde principal */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative; /* Para posicionar el logo fijo */
+}
+
+/* Contenedor que centra la tarjeta de detalle */
+.content-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box; /* Incluir padding en el width/height */
+}
+
+/* Logo fijo en la esquina superior izquierda */
+.logo-area-fixed {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 100;
+}
+
+.logo-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--color-blanco);
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 5px var(--color-sombra);
+}
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Estilo de la Tarjeta de Detalle (el bloque blanco grande y centrado) */
+.content-card-detail {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 50px 70px;
+  box-shadow: 0 5px 20px var(--color-sombra);
+
+  max-width: 700px; /* Ancho máximo para la tarjeta */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Círculo de Icono (grande y centrado) */
+.icon-circle-detail {
+  width: 150px;
+  height: 150px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 5px solid #a020f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.icon-circle-detail img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.card-detail-title {
+  font-size: 32px;
+  color: var(--color-texto-oscuro);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.card-detail-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-texto-claro);
+  margin-bottom: 30px;
+  max-width: 80%;
+}
+
+/* Botón de Detalle */
+.btn-detail {
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-magenta {
+  background-color: #a020f0;
+  color: #ffffff;
+}
+
+.btn-magenta:hover {
+  background-color: #a020f0;
+}
+
+/* Media Queries para adaptabilidad */
+@media (max-width: 768px) {
+  .content-card-detail {
+    padding: 30px 40px;
+    margin: 20px;
+  }
+  .card-detail-title {
+    font-size: 26px;
+  }
+  .icon-circle-detail {
+    width: 120px;
+    height: 120px;
+  }
+  .logo-area-fixed {
+    top: 20px;
+    left: 20px;
+  }
+  .logo-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+

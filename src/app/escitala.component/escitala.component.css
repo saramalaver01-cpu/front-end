@@ -1,0 +1,327 @@
+/* --- DEFINICIÓN DE COLORES Y VARIABLES GLOBALES --- */
+:root {
+  --color-verde-lima: #59fa34; /* Fondo Sidebar */
+  --color-magenta: #a020f0;  /* Fondo Barra Superior y Botones */
+  --color-blanco: #ffffff;
+  --color-texto-oscuro: #333333;
+  --color-texto-claro: #666666;
+  --color-sombra: rgba(0, 0, 0, 0.15);
+}
+
+/* --- ESTILOS BASE (Anteriormente en modulo_contenido.css) --- */
+
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.main-layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  box-shadow: 0 0 20px var(--color-sombra);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* --- 1. ASIDE (Barra Lateral Izquierda - VERDE LIMA) --- */
+.sidebar {
+  width: 150px;
+  min-width: 150px;
+  background-color: #a020f0; /* Fondo Verde Lima */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-area {
+  margin-bottom: 50px;
+  padding-top: 20px;
+}
+
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 5px var(--color-sombra);
+}
+
+.sidebar-content {
+  flex-grow: 1;
+}
+
+/* Botón VOLVER (MAGENTA sobre fondo VERDE) */
+.btn-volver {
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-magenta-sidebar {
+  background-color: #59fa34;
+  color: #ffffff;
+}
+
+.btn-magenta-sidebar:hover {
+  background-color: #a020f0;
+}
+
+/* --- 2. PANEL DE CONTENIDO DERECHO --- */
+.content-panel {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* HEADER (Barra Superior - MAGENTA) */
+.top-header-bar {
+  width: 100%;
+  height: 160px;
+  background-color: #a020f0; /* Fondo Morado */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.module-title-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Área de Simulación (El espacio blanco principal) */
+.module-simulation-area {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+/* --- ESTILOS ESPECÍFICOS PARA ESCÍTALA --- */
+
+/* Modificar el área blanca para que ocupe todo el espacio restante verticalmente y permita el scroll */
+.single-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-grow: 1; /* Ocupa el espacio restante del content-panel */
+  overflow-y: auto; /* PERMITE EL SCROLL SOLO EN ESTA ÁREA */
+}
+
+/* Tarjeta contenedora principal (El efecto flotante) */
+.escitala-card-container {
+  width: 100%;
+  max-width: 900px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px var(--color-sombra);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* Ajustar los elementos internos */
+.description-box {
+  padding: 15px 0;
+  border-bottom: 2px solid #a020f0;
+  margin-bottom: 20px;
+}
+
+.description-box h2 {
+  color: #a020f0;
+  font-size: 26px;
+  margin-top: 0;
+}
+
+.description-box p {
+  color: var(--color-texto-claro);
+  line-height: 1.6;
+}
+
+.interaction-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Controles de Clave */
+.controls-area {
+  padding: 15px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.controls-area label {
+  font-weight: bold;
+  color: var(--color-texto-oscuro);
+}
+
+.controls-area input {
+  width: 80px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Caja de Interacción Principal */
+.interaction-box {
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fcfcfc;
+}
+
+.interaction-box h3 {
+  color: var(--color-texto-oscuro);
+  margin-top: 0;
+}
+
+.interaction-box textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.action-buttons button {
+  flex-grow: 1;
+  background-color: #a020f0;
+  color:#ffffff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-buttons button:hover {
+  background-color: #a020f0;
+}
+
+
+/* Área de Resultado */
+.result-box {
+  padding: 20px;
+  background-color: #f0fff0;
+  border: 1px solid #59fa34;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.result-box h3 {
+  color: var(--color-texto-oscuro);
+  margin-top: 0;
+  border-bottom: 1px dashed #59fa34;
+  padding-bottom: 5px;
+}
+
+.resultado-escitala {
+  font-size: 1.2em;
+  font-weight: bold;
+  word-break: break-all;
+  color: var(--color-texto-oscuro);
+}
+
+/* Visualización de la Matriz */
+.matrix-visualization {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+
+.matrix-visualization h3 {
+  color: #a020f0;
+}
+
+.matrix-grid {
+  display: inline-grid;
+  border: 1px solid #aaa;
+  gap: 1px;
+  margin-top: 10px;
+  background-color: #aaa;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.matrix-cell {
+  background-color: #ffffff;
+  padding: 5px 8px;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  /* Ajustes para el layout principal en móvil */
+  .main-layout {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0;
+    padding: 10px 20px;
+  }
+  .logo-area {
+    margin: 0;
+    padding: 0;
+  }
+  .sidebar-content {
+    display: none;
+  }
+  .btn-volver {
+    margin: 0;
+  }
+  /* Ajustes para el contenido del módulo */
+  .single-column {
+    padding: 20px 10px;
+  }
+  .escitala-card-container {
+    padding: 20px;
+  }
+  .controls-area {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .action-buttons {
+    flex-direction: column;
+  }
+}

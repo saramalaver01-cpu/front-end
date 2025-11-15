@@ -1,0 +1,186 @@
+/* --- DEFINICIÓN DE COLORES --- */
+:root {
+  --color-verde-lima: #59fa34; /* Fondo Principal */
+  --color-magenta: #a020f0;  /* Botones principales y etiquetas */
+  --color-blanco: #ffffff; /* Fondo de Tarjeta */
+  --color-texto-oscuro: #2e2c2c;
+  --color-texto-claro: #333131;
+  --color-sombra: rgba(23, 20, 20, 0.87);
+}
+
+body {
+  background-color: #59fa34; /* Fondo verde principal */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Contenedor principal de la página, sin centrar en el centro de la vista */
+.modulos-page-container {
+  width: 90%;
+  max-width: 1200px;
+  height: 100vh; /* Ocupa toda la altura para el layout */
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* --- LOGO Y BOTÓN VOLVER --- */
+
+/* Logo fijo en la esquina superior izquierda */
+.logo-area-fixed {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 100;
+}
+
+.logo-icon {
+  width: 70px;
+  height: 70px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(23, 20, 20, 0.87);
+}
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Botón Volver (posición flotante izquierda, debajo del logo) */
+.btn-volver {
+  position: absolute;
+  top: 120px;
+  left: 30px;
+  z-index: 100;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-magenta {
+  background-color: #a020f0;
+  color: #ffffff;
+}
+
+.btn-magenta:hover {
+  background-color: #a020f0;
+}
+
+/* --- CUADRÍCULA DE MÓDULOS (2 Columnas) --- */
+
+.modulos-grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  gap: 40px;
+  width: 100%;
+  max-width: 800px; /* Ancho máximo para el contenedor de las tarjetas */
+  margin: auto; /* Centra el wrapper en la vista vertical */
+  padding-top: 0px; /* Espacio para que no choque con el logo/volver */
+}
+
+/* Estilo de cada Tarjeta de Módulo */
+.modulo-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(23, 20, 20, 0.87);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Etiqueta del título (Análisis Numérico / Matemáticas Discretas) */
+.module-title-label {
+  background-color: #a020f0;
+  color: #ffffff;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(23, 20, 20, 0.87);
+}
+
+/* Icono dentro del círculo */
+.icon-circle-modulo {
+  width: 180px;
+  height: 180px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 5px solid #59fa34; /* Borde verde lima */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.icon-circle-modulo img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.modulo-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-texto-claro);
+  margin-bottom: 30px;
+  min-height: 80px; /* Asegura que la altura sea similar */
+}
+
+/* Botón "Empezar" */
+.btn-empezar {
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background-color 0.3s;
+  background-color: #a020f0; /* Magenta */
+  color: #ffffff;
+  margin-top: auto; /* Empuja el botón hacia abajo */
+}
+
+.btn-empezar:hover {
+  background-color: #a020f0;
+}
+
+/* Media Query para una columna en móvil */
+@media (max-width: 900px) {
+  .modulos-grid-wrapper {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    gap: 30px;
+    padding-top: 100px; /* Más espacio */
+  }
+  .modulos-page-container {
+    height: auto;
+    min-height: 100vh;
+  }
+  .logo-area-fixed, .btn-volver {
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+  }
+  .logo-area-fixed {
+    top: 20px;
+  }
+  .btn-volver {
+    top: 100px;
+  }
+}

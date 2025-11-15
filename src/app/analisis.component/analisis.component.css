@@ -1,0 +1,306 @@
+/* --- DEFINICIÓN DE COLORES Y VARIABLES GLOBALES --- */
+:root {
+  --color-verde-lima: #59fa34; /* Fondo Sidebar */
+  --color-magenta: #a020f0;  /* Fondo Barra Superior y Botones */
+  --color-blanco: #ffffff;
+  --color-texto-oscuro: #333333;
+  --color-texto-claro: #666666;
+  --color-sombra: rgba(0, 0, 0, 0.15);
+}
+
+/* --- ESTILOS BASE (Aside, Header, Layout Principal) --- */
+
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.main-layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* 1. ASIDE (Barra Lateral Izquierda - VERDE LIMA) */
+.sidebar {
+  width: 150px;
+  min-width: 150px;
+  background-color: #a020f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-area {
+  margin-bottom: 50px;
+  padding-top: 20px;
+}
+
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-content { flex-grow: 1; }
+
+.btn-volver {
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.btn-magenta-sidebar {
+  background-color: #59fa34;
+  color: #ffffff;
+}
+
+.btn-magenta-sidebar:hover { background-color: #a020f0; }
+
+
+/* 2. PANEL DE CONTENIDO DERECHO */
+.content-panel {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* HEADER (Barra Superior - MAGENTA) */
+.top-header-bar {
+  width: 100%;
+  height: 130px;
+  background-color: #a020f0;
+  color:#ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+.module-title-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+/* Área de Simulación (Área Blanca Scrollable) */
+.single-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-grow: 1;
+  overflow-y: auto; /* SCROLL CRÍTICO */
+}
+
+/* Tarjeta contenedora principal (El efecto flotante) */
+.biseccion-card-container {
+  width: 100%;
+  max-width: 1000px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.description-box {
+  padding: 15px 0;
+  border-bottom: 2px solid #a020f0;
+  margin-bottom: 20px;
+}
+.description-box h2 {
+  color: #a020f0;
+  margin-top: 0;
+}
+.interaction-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+/* --- 3. ESTILOS ESPECÍFICOS PARA BISECCIÓN --- */
+
+/* Controles de Entrada (El contenedor principal de los inputs) */
+.controls-area {
+  padding: 30px; /* Aumentamos el padding para aire */
+  background-color: #fcfcfc; /* Fondo blanco muy suave */
+  border-radius: 12px; /* Suavizamos las esquinas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra ligera de tarjeta */
+  margin-bottom: 20px;
+  border: 1px solid #eee; /* Borde muy fino */
+}
+
+.split-input {
+  display: grid;
+  /* 2.5 partes para función, 1.2 partes para el resto (dan más espacio a los números) */
+  grid-template-columns: 2.5fr 1.2fr 1.2fr 1.2fr;
+  gap: 1px; /* Aumentamos el espacio entre campos */
+  align-items: start;
+  margin-bottom: 20px; /* Separación clara entre la primera y la segunda línea de inputs */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* La función ocupa el espacio de dos columnas pequeñas */
+.input-group:nth-child(1) {
+  grid-column: span 4;
+}
+
+.controls-area label {
+  font-weight: 600; /* Un poco más grueso */
+  margin-bottom: 8px; /* Más espacio entre etiqueta e input */
+  color: var(--color-texto-oscuro);
+  font-size: 1.05em; /* Un poco más grande */
+}
+
+.controls-area input[type="text"],
+.controls-area input[type="number"] {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Bordes suaves */
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.controls-area input[type="text"]:focus,
+.controls-area input[type="number"]:focus {
+  border-color: #a020f0; /* Efecto de foco magenta */
+  outline: none;
+  box-shadow: 0 0 5px rgb(160, 32, 240);
+}
+
+/* Botón y Resumen */
+.action-results-box {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px dashed #ccc;
+}
+
+#btn-iniciar-biseccion {
+  background-color: #a020f0;
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+#btn-iniciar-biseccion:hover { background-color: #c95ed2; }
+
+.result-summary h3 { color: #a020f0; margin-top: 0; margin-bottom: 10px; }
+
+.resultado-raiz, .resultado-iteraciones { font-weight: bold; margin: 5px 0; }
+
+
+/* Estilos de la Tabla */
+.table-visualization { margin-top: 20px; }
+.table-visualization h3 { color: #a020f0; margin-bottom: 15px; }
+
+/* Contenedor con scroll para la tabla si es muy ancha */
+.table-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+#tabla-biseccion {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+  background-color:#ffffff;
+}
+
+#tabla-biseccion th {
+  background-color: #59fa34;
+  color: var(--color-texto-oscuro);
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #c8f5c8;
+}
+
+#tabla-biseccion td {
+  padding: 10px 15px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  font-family: monospace;
+}
+
+#tabla-biseccion tbody tr:nth-child(even) { background-color: #f9f9f9; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  /* Redefinimos el grid para que los inputs se apilen */
+  .split-input { grid-template-columns: 1fr; gap: 15px; }
+
+  .input-group:first-child { grid-column: span 1; }
+
+  .action-results-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .result-summary { margin-top: 15px; }
+
+  /* Ajustes para el layout principal en móvil */
+  .main-layout {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh; }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0;
+    padding: 10px 20px; }
+
+  .logo-area {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar-content { display: none; }
+
+  .btn-volver {
+    margin: 0;
+  }
+
+  /* Ajustes para el contenido del módulo */
+  .single-column { padding: 20px 10px; }
+
+  .biseccion-card-container { padding: 20px; }
+}

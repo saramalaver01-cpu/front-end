@@ -1,0 +1,154 @@
+/* --- DEFINICIÓN DE COLORES --- */
+:root {
+  --color-magenta-btn: #a020f0;  /* Púrpura del botón LOGIN */
+  --color-blanco: #ffffff;
+  --color-input-line: #ffffff;
+}
+
+body {
+  background-color: #ffffff; /* Fondo gris exterior */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 1. Contenedor Principal con la imagen de fondo */
+.login-container {
+  width: 80%;
+  max-width: 1000px;
+  height: 600px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+  /* --- PROPIEDADES CLAVE PARA CUBRIR TODA LA PANTALLA --- */
+  background-image: url('/assets/imagenes/login.png');
+  background-size: cover;       /* <--- ESTO ES LO QUE HACE QUE CUBRA TODO */
+  background-position: center;
+  background-repeat: no-repeat;
+  /* -------------------------------------------------------- */
+}
+
+/* 2. Contenido del Formulario (Superposición) */
+.form-content {
+  /* Ajusta el ancho para que solo cubra el área verde donde va el formulario */
+  width: 45%;
+  height: 100%;
+  padding: 20px 40px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+/* --- ÁREA DE LA ILUSTRACIÓN (MITAD DERECHA) --- */
+.illustration-area {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  z-index: 10; /* Detrás del formulario, pero encima del clip-path */
+}
+
+/* Imagen del muchacho */
+.illustration-image {
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Ajuste fino para el centrado */
+  height: 85%; /* Ajusta la altura de la imagen del muchacho */
+  object-fit: contain;
+  z-index: 0; /* Encima de la ola magenta */
+}
+
+/* --- ESTILOS DE ELEMENTOS (Igual que antes) --- */
+.logo-icon-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  background-color:  #ffffff;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.welcome-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.input-field {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  color:  #ffffff;
+  padding: 5px 0;
+  font-size: 18px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.forgot-password {
+  color:  #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: right;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.login-button {
+  background-color: #a020f0;
+  color:  #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-button:hover {
+  background-color: #a020f0;
+}
